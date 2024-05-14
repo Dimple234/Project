@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="Admin/base::Layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Add Product</title>
+</head>
+<body>
+	<section>
+	<style>
+	.card{
+	position: absolute;
+	top:5em;
+	width:78vw;
+
+	}
+	.input-form{
+	display:flex;
+	flex-direction:column;
+	 margin-top:2em;
+	width: 100%;
+	}
+	.input-btn{
+	width:100%;
+	margin-top:2em;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	
+	}
+	
+	.input-btn .form-btn{
+	width:100px;
+	}
+	.input-form .inp-des{
+	height: 150px;
+	margin-top: 0em;
+	}
+	
+	
+	</style>
+		<div class="card">
+			<div class="card-body">
+				<h1 class="text-center">Add Item</h1>
+				
+				<div class="container-fluid mt-1">
+				
+				<div class="row">
+				
+				<div class="col-md-10 offset-md-1">
+				
+					<form 
+						th:object = "${item}"
+						enctype="multipart/form-data"
+						method="POST"
+						th:action="@{/admin/processcategory}"
+						class="mt-2">
+						
+						
+						<div class="input-group">						
+							
+							<div class="input-form">
+							<label for="">Name</label>
+							<input name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name here" required="required" />
+							</div>
+							
+							<div class="input-form">
+							<label for="">Price</label>
+							<input name="price" type="number" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter price here" required="required" />
+							</div>
+							<div class="input-form">
+							<label for="">Description</label>
+							 <textarea id="freeform" name="discription" rows="4" cols="50" placeholder="Enter text here..." ></textarea>
+							
+							</div>
+							<div class="input-form">
+							<label for="">image</label>
+ 							<input name="itemimage" type="file" class="form-control" id="name"  placeholder="Enter your name"  />
+ 							</div>
+							<div class="input-btn">
+							<button class="form-btn">
+							Submit
+							</button>
+							</div>
+							
+						</div>
+						
+					</form>
+				
+				</div>
+				
+				</div>
+				
+				</div>
+			
+			</div>
+		</div>
+	</section>
+</body>
+</html>

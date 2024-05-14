@@ -1,0 +1,54 @@
+<!doctype html> 
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="User/basewithfixed::Layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Order history</title>
+	
+</head>
+<body>
+
+	<section>
+
+	<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#ID</th>
+      <th scope="col">Cid</th>
+      <th scope="col">productname</th>
+      <th scope="col">paymentMethod</th>
+    
+      <th scope="col">orderDateTime</th>
+      <th scope="col">name</th>
+      <th scope="col">No_of_order</th>
+      <th scope="col">billAmount</th>
+      <th scope="col">Status</th>
+      
+      
+    </tr>
+    
+  </thead>
+  
+  <tbody th:each="c : ${all}" >
+  
+    <tr>
+        <th scope="row" >
+       <span th:text="${c.id}"></span>
+        </th>
+        <td > 
+        <span th:text="${c.Cid}"></span></td>
+        <td th:text="${c.productname}"></td>
+        <td th:text="${c.paymentMethod}"></td>
+    
+        <td th:text="${c.orderDateTime}">@</td>
+        <td th:text="${c.name}">@</td>
+        <td th:text="${c.noOfOrder}">@</td>
+        <td th:text="${c.billAmount}">@</td>
+        <td th:text="${c.status}"> </td>
+    </tr>
+</form>
+  </tbody>
+</table>
+	
+	</section>
+</body>
+</html>

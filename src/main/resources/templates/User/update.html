@@ -1,0 +1,61 @@
+ <!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="User/basewithfixed::Layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<section>
+	
+		<div class="card mr-3 ml-4 ">
+		
+		<div class="card-body mr-3 mt-5 ">
+		
+		<div class="cointainer text-center mr-3 mt-2 ml-3">
+		
+<!-- 			<img style="height: 250px; width: 200px;" class="my_profile_picture" th:src="@{'/images/'+${user.imageUrl}}" alt="profile photo"  />
+ -->			<br>
+		<form th:action="@{/user/updatePr}" method="post">
+		  <div class="form-group row">
+		    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+		    <div class="col-sm-10">
+		      <input type="text" readonly name="email"class="form-control-plaintext" id="staticEmail" th:value="${user.email}">
+		    </div>
+		  </div>
+		  <br>
+         
+		  <div class="form-group row">
+		    <label for="" class="col-sm-2 col-form-label">Name</label>
+		    <div class="col-sm-10">
+		      <input name="name" type="text" class="form-control" id="inputPassword" th:value="${user.name}">
+		    </div>
+		    </div>
+		    <br>
+		    <div class="form-group row">
+		    <label for="" class="col-sm-2 col-form-label">Role</label>
+		    <div class="col-sm-10">
+		      <input type="text" class="form-control-plaintext" readonly id="inputPassword" value="User">
+		    </div>
+		    </div>
+		    <br>
+		    
+		     <div class="form-group row">
+		    <label for="" class="col-sm-2 col-form-label">Password</label>
+		    <div class="col-sm-10">
+		      <input type="password" name="password" class="form-control-plaintext" id="inputPassword" th:value="${user.password}">
+		    </div>
+		    </div>
+		    <br>
+		  
+		    <button class="btn btn-primary" type="submit" name="action" value="submit">Submit</button>
+		   </form>
+	 </div>
+
+</div>
+
+</div>
+	
+	</section>
+</body>
+</html>
+ 
